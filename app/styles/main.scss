@@ -58,7 +58,8 @@ body {
     }
 
     &__credits {
-      margin-top:20px; 
+      margin-top:20px;
+
       span {
         display: inline-block;
         padding:10px;
@@ -75,5 +76,14 @@ body {
 
   &__footer {
     padding-top:40px;
+
+    &__item {
+      display: inline-block;
+      padding:10px;
+    }
+
+    &__desc {
+      opacity:0.7;
+    }
   }
 }
