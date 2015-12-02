@@ -1,0 +1,78 @@
+$icon-font-path: '../fonts/';
+$body-bg: #00202F;
+$brand-primary: #FFEE53;
+$text-color: white;
+$font-family-sans-serif:  sans-serif;
+$link-color: mix($brand-primary, $text-color);
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@mixin transform($transform) {
+          transform: $transform;
+  -webkit-transform: $transform;
+      -ms-transform: $transform; // IE9 only
+       -o-transform: $transform;
+}
+
+body {
+  &:after, &:before {
+    content:"";
+    position: fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:-1;
+  }
+
+  &:after {
+    border: $brand-primary 7px solid;
+    @include rotate(5deg);
+  }
+}
+
+.main {
+  text-align: center;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:10;
+
+  &__brand {
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index:20;
+    @include translate(-50%, -50%);
+
+    &__logo {
+      margin-bottom:30px;
+    }
+
+    &__punchline {
+      font-weight:200;
+    }
+
+    &__credits {
+      span {
+        display: inline-block;
+        padding:10px;
+        background:white;
+        a, & {
+          color:$body-bg;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    padding-top:40px;
+  }
+}
